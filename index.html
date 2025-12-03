@@ -315,13 +315,15 @@
         // Add phone link
         if (phoneLink) {
           const coords = getLinkCoordinates(phoneLink);
-          pdf.link(coords.x, coords.y, coords.width, coords.height, { url: "tel:+918758220190" });
+          const phoneUrl = phoneLink.getAttribute('href');
+          pdf.link(coords.x, coords.y, coords.width, coords.height, { url: phoneUrl });
         }
         
         // Add email link
         if (emailLink) {
           const coords = getLinkCoordinates(emailLink);
-          pdf.link(coords.x, coords.y, coords.width, coords.height, { url: "mailto:yash482006@gmail.com" });
+          const emailUrl = emailLink.getAttribute('href');
+          pdf.link(coords.x, coords.y, coords.width, coords.height, { url: emailUrl });
         }
 
         // Save the PDF
